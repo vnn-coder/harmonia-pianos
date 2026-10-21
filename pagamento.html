@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento | Harmonia Pianos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+
+        <div class="pagamento-cabecalho">
+            <p class="pagamento-etapa">PAGAMENTO</p>
+            <h1>Escolha a forma de pagamento</h1>
+            <p>Selecione uma opção para finalizar seu pedido.</p>
+        </div>
+
+        <section class="pagamento-container">
+
+            <h2>Forma de pagamento</h2>
+
+            <div class="opcoes-pagamento">
+
+                <button type="button" class="opcao-pagamento" data-pagamento="pix">
+                    PIX
+                </button>
+
+                <button type="button" class="opcao-pagamento" data-pagamento="cartao">
+                    Cartão
+                </button>
+
+                <button type="button" class="opcao-pagamento" data-pagamento="boleto">
+                    Boleto
+                </button>
+
+            </div>
+
+            <div id="detalhes-pagamento"></div>
+
+        </section>
+
+    </main>
+
+    <script src="pagamento.js"></script>
+
+</body>
+
+</html>

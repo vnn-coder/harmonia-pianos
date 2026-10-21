@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco | Harmonia Pianos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="contato-header">
+        <h2>Hamornia Pianos</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="produto.html">Produtos</a>
+            <a href="contato.html">Fale Conosco</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </header>
+
+    <main class="contato-pagina">
+        <h1>Fale Conosco</h1>
+        <p>Tem alguma dúvida? Estamos aqui para ajudar!</p>
+
+        <section class="contato-card">
+            <h2>Envie sua mensagem</h2>
+
+            <form id="form-contato">
+                <label for="contato-nome">Nome</label>
+                <input type="text" id="contato-nome" placeholder="Seu nome" required>
+
+                <label for="contato-email">E-mail</label>
+                <input type="email" id="contato-email" placeholder="Seu e-mail" required>
+
+                <label for="contato-mensagem">Mensagem</label>
+                <textarea id="contato-mensagem" placeholder="Digite sua mensagem" rows="5" required></textarea>
+
+                <button type="submit">Enviar mensagem</button>
+            </form>
+
+            <p id="conteudo-feedback" role="status"></p>
+        </section>
+
+        <section class="contato-info">
+            <h2>Outras formas de contato</h2>
+            <p>E-mail: contato@harmoniapianos.com</p>
+            <p>WhatsApp: (24) 98100-0000</p>
+        </section>
+    </main>
+
+    <script>
+        const formulario = document.querySelector("#form-contato");
+        const feedback = document.querySelector("#contato-feedback");
+
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            feedback.textContent =
+                "Mensagem preenchida com sucesso! Este formulário é demonstrativo e não realiza envios."
+
+            formulario.reset();
+        });
+    </script>
+
+</body>
+
+</html>
