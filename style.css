@@ -7,18 +7,18 @@
 }
 
 :root {
-    --fundo: #080808;
-    --fundo-secundario: #111111;
-    --card: #181818;
-    --destaque: #FFFFFF;
-    --texto-secundario: #b8b8b8;
-    --destaque: #FFFFFF;
+    --fundo: #121212;
+    --fundo-secundario: #282828;
+    --card: #282828;
+    --destaque: #F4B942;
+    --texto: #faf7f0;
+    --destaque: #F4B942;
     --borda: #333333;
 }
 
 body {
-    background-color: var(--fundo);
-    color: var(--destaque);
+    background-color: var(--texto);
+    color: #faf7f0;
 }
 
 
@@ -28,20 +28,23 @@ body {
 .nav-bar {
     width: 100%;
     padding: 20px 40px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-
-    background-color: var(--destaque);
+    background-color: var(--fundo);
     border-bottom: 1px solid var(--borda);
 }
 
 .nav-bar h1 {
-    color: var(--fundo-secundario);
+    color: var(--texto);
     font-size: 26px;
     white-space: nowrap;
+}
+
+.nav-bar1 a {
+    color: var(--texto);
+    text-decoration: none;
 }
 
 
@@ -130,7 +133,7 @@ body {
     position: absolute;
     top: -4px;
     right: -4px;
-    background-color: var(--destaque);
+    background-color: var(--texto);
     color: var(--texto);
     font-size: 11px;
     font-weight: bold;
@@ -168,14 +171,14 @@ body {
 }
 
 .nav-bar1 a {
-    color: var(--fundo);
+    color: var(--texto);
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
 }
 
 .nav-bar1 a:hover {
-    color: #3D3D3D;
+    color: var(--destaque);
 }
 
 
@@ -280,23 +283,18 @@ body {
 .card button {
     width: 100%;
     padding: 12px;
-
     border: none;
     border-radius: 8px;
-
-    background-color: var(--destaque);
+    background-color: var(--texto);
     color: var(--fundo);
-
     font-size: 16px;
     font-weight: bold;
-
     cursor: pointer;
-
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .card button:hover {
-    background-color: #d9d9d9;
+    background-color: #e5dfd3;
     color: #000000;
     transform: translateY(-2px);
 }
@@ -318,7 +316,7 @@ body {
 /* ===== RODAPÉ ===== */
 .footer {
     margin-top: 30px;
-    background-color: var(--destaque);
+    background-color: var(--fundo-secundario);
     border-top: 1px solid var(--borda);
 }
 
@@ -340,17 +338,17 @@ body {
 }
 
 .footer h2 {
-    color: var(--fundo);
+    color: var(--texto);
     margin-bottom: 10px;
 }
 
 .footer h3 {
-    color: var(--fundo);
+    color: var(--texto);
     margin-bottom: 15px;
 }
 
 .footer p {
-    color: var(--fundo-secundario);
+    color: var(--texto);
 }
 
 .footer-navegation {
@@ -360,13 +358,13 @@ body {
 }
 
 .footer-navegation a {
-    color: var(--fundo);
+    color: var(--texto);
     text-decoration: none;
     transition: 0.3s;
 }
 
 .footer-navegation a:hover {
-    color: #3D3D3D;
+    color: var(--destaque);
 }
 
 .footer-contact p {
@@ -1231,14 +1229,14 @@ body {
 #form-contato textarea {
     padding: 12px;
     background-color: var(--card);
-    color: white;
+    color: var(--texto);
     border: 1px solid var(--borda);
     border-radius: 8px;
 }
 
 #form-contato button {
     padding: 14px;
-    background-color: var(--destaque);
+    background-color: var(--texto);
     color: var(--fundo);
     border: none;
     border-radius: 8px;
@@ -1261,5 +1259,116 @@ body {
 }
 
 .contato-info {
-    margin-top: 30px;
+    margin-top: 60px;
+    padding: 10px 20px;
+    background-color: var(--fundo-secundario);
+    border-top: 1px solid var(--borda);
+    text-align: center;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contato-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--destaque);
+    color: var(--fundo);
+}
+
+.contato-header nav a {
+    color: var(--fundo);
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+.contato-header nav a:hover {
+    color: #666666;
+}
+
+.pagina-contato {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-contato .contato-pagina {
+    flex: 1;
+}
+
+.pagina-contato .contato-info {
+    margin-top: 100px;
+    text-align: center;
+}
+
+/* ==== INSTRUMENTOS EM DESTAQUE ==== */
+
+.instrumentos-destaque {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.instrumentos-destaque h2 {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #222222;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.produto-destaque {
+    background-color: var(--card);
+    padding: 25px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+    flex: 1;
+    border-bottom: 2px solid #b8860b;
+}
+
+.produto-destaque:hover {
+    transform: translateY(-5px);
+}
+
+.referencia {
+    color: #D4A64A;
+}
+
+.produto-destaque h3 {
+    color: #D4A64A;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.produto-destaque p {
+    margin-bottom: 12px;
+}
+
+.produto-destaque img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.imagem-bateria {
+    object-position: center 65%;
+}
+
+.lista-instrumentos {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.imagem-baixo {
+    object-position: center 60%;
 }
