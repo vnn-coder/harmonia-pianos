@@ -19,6 +19,8 @@ const carrinhoItens = document.querySelector(".carrinho-itens");
 
 const carrinhoTotal = document.querySelector(".carrinho-total");
 
+const botaoFinalizarCompra = document.querySelector(".finalizar-compra");
+
 console.log(botoesComprar);
 
 function salvarCarrinho() {
@@ -30,11 +32,18 @@ function salvarCarrinho() {
 
 function atualizarCarrinho() {
     salvarCarrinho();
+    botaoFinalizarCompra.disabled = carrinho.length === 0;
     const carrinhoItens = document.querySelector(".carrinho-itens");
 
     carrinhoItens.innerHTML = "";
 
     let total = 0;
+
+    const quantidadeTotal = carrinho.reduce((soma, produto) => {
+        return soma + produto.quantidade;
+    }, 0);
+
+    contadorCarrinho.textContent = quantidadeTotal;
 
 
     if (carrinho.length === 0) {
@@ -231,8 +240,6 @@ const botaoBusca = document.querySelector("#btn-busca");
 const produtosCards = document.querySelectorAll(".produto-card");
 
 const mensagemBusca = document.querySelector("#mensagem-busca");
-
-const botaoFinalizarCompra = document.querySelector(".finalizar-compra");
 
 function pesquisarProdutos() {
     const pesquisa = inputBusca.value.toLowerCase().trim();
