@@ -679,6 +679,7 @@ body {
 .checkout-cabecalho h1 {
     font-size: 38px;
     margin-bottom: 8px;
+    color: var(--fundo-secundario);
 }
 
 .checkout-cabecalho>p:last-child {
