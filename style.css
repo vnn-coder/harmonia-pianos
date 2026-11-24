@@ -666,6 +666,7 @@ body {
 
 .checkout-cabecalho {
     margin-bottom: 40px;
+    padding: 30px;
 }
 
 .checkout-etapa {
@@ -751,7 +752,6 @@ body {
 }
 
 
-
 .checkout-acoes {
     display: flex;
     justify-content: space-between;
@@ -771,7 +771,6 @@ body {
 }
 
 
-
 .btn-voltar-carrinho {
     color: #000;
     background: transparent;
@@ -784,8 +783,10 @@ body {
 }
 
 
-
 #btn-continuar-pagamento {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
     background: #000;
     color: #fff;
     border: 1px solid #000;
@@ -1044,6 +1045,10 @@ body {
 
     .btn-finalizar-cartao {
         width: 100%;
+    }
+
+    #form-comprador {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1390,5 +1395,11 @@ body {
     background-color: #999;
     cursor: not-allowed;
     opacity: 1.0;
+}
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
