@@ -8,6 +8,12 @@ opcoesPagamento.forEach(function (botao) {
 
         const formaPagamento = botao.dataset.pagamento;
 
+        opcoesPagamento.forEach(function(opcao) {
+            opcao.classList.remove("selecionada");
+        });
+
+        botao.classList.add("selecionada");
+
         if (formaPagamento === "pix") {
             detalhesPagamento.innerHTML = `
             <div class="detalhes-pix">

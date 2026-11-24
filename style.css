@@ -12,7 +12,6 @@
     --card: #282828;
     --destaque: #F4B942;
     --texto: #faf7f0;
-    --destaque: #F4B942;
     --borda: #333333;
 }
 
@@ -860,13 +859,13 @@ body {
 /* ===== PÁGINA DE PAGAMENTO ===== */
 .pagamento-cabecalho {
     padding: 40px 25px 25px;
-    color: var(--fundo);
+    color: var(--texto);
 }
 
 .pagamento-etapa {
     font-size: 13px;
     letter-spacing: 2px;
-    color: #aaa;
+    color: var(--destaque);
     margin-bottom: 8px;
 }
 
@@ -876,18 +875,21 @@ body {
 }
 
 .pagamento-cabecalho>p:last-child {
-    color: #aaa;
+    color: var(--texto);
 }
 
 .pagamento-container {
-    background: #fff;
-    color: #000;
+    background: var(--card);
+    color: var(--texto);
     margin: 0 25px;
-    padding: 25px;
+    padding: 30px;
     border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid var(--destaque);
 }
 
 .pagamento-container h2 {
+    color: var(--destaque);
     margin-bottom: 20px;
 }
 
@@ -898,9 +900,9 @@ body {
 }
 
 .opcao-pagamento {
-    background: #fff;
-    color: #000;
-    border: 1px solid #ccc;
+    background: var(--fundo-secundario);
+    color: var(--texto);
+    border: 1px solid var(--borda);
     border-radius: 8px;
     padding: 20px;
     font-size: 16px;
@@ -910,9 +912,9 @@ body {
 }
 
 .opcao-pagamento:hover {
-    background: #000;
-    color: #fff;
-    border-color: #000;
+    background: var(--fundo);
+    color: var(--texto);
+    border-color: var(--destaque);
     transform: translateY(-2px);
 }
 
@@ -964,6 +966,17 @@ body {
 
 #detalhes-pagamento {
     margin-top: 24px;
+}
+
+.pagina-pagamento {
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+.opcao-pagamento.selecionada {
+    border-color: var(--destaque);
+    background-color: var(--fundo);
+    color: var(--texto);
 }
 
 
