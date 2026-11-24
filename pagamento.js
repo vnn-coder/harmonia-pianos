@@ -72,7 +72,7 @@ opcoesPagamento.forEach(function (botao) {
                     id="cvv-cartao"
                     placeholder="123"
                     maxlength="4"
-                    inpuntmode="numeric"
+                    inputmode="numeric"
                 >
             </div>
 
@@ -195,7 +195,7 @@ function validarCartao() {
     const anoAtual = dataAtual.getFullYear() % 100;
 
 
-    if (ano < anoAtual || (ano == - anoAtual && mes < mesAtual)) {
+    if (ano < anoAtual || (ano == anoAtual && mes < mesAtual)) {
         alert("Este cartão está vencido.");
         return false;
     }
