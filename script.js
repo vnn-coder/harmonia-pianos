@@ -198,6 +198,9 @@ botaoCarrinho.addEventListener("click", function () {
 
     modalCarrinho.style.display = "block";
 
+    const tituloCarrinho = modalCarrinho.querySelector("h2");
+    tituloCarrinho.focus({preventScroll: true});
+
     setTimeout(function () {
         modalCarrinho.classList.add("aberto");
     }, 10);
@@ -209,6 +212,8 @@ botaoFecharCarrinho.addEventListener("click", function () {
     setTimeout(function () {
         modalCarrinho.style.display = "none";
     }, 300);
+
+    document.querySelector(".cart-btn").focus();
 });
 
 
@@ -224,14 +229,46 @@ atualizarCarrinho();
 
 modalCarrinho.addEventListener("click", function (event) {
     if (event.target === modalCarrinho) {
-        modalCarrinho.classList.remove("aberto");
 
-        setTimeout(function () {
-            modalCarrinho.style.display = "none";
-        }, 300);
+        botaoFecharCarrinho.click();
     }
 });
 
+document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape" || getComputedStyle(modalCarrinho).display === "none") {
+        return;
+    }
+
+    modalCarrinho.querySelector(".fechar-carrinho").click();
+});
+
+modalCarrinho.addEventListener("keydown", function (event) {
+    if (event.key !== "Tab" || !modalCarrinho.classList.contains("aberto")) {
+        return;
+    }
+
+    const botoes = modalCarrinho.querySelectorAll("button:not(:disabled)");
+    
+    const primeiroBotao = botoes[0];s
+
+    const ulimoBotao = botoes[botoes.length - 1];
+
+    const titulo = modalCarrinho.querySelector("h2");
+
+    const elementoEmFoco = document.activeElement;
+
+    if (!modalCarrinho.contains(elementoEmFoco)) {
+        event.preventDefault();
+        (event.shiftKey ? ulimoBotao : primeiroBotao).focus();
+    } else if (event.shiftKey && (elementoEmFoco === primeiroBotao || elementoEmFoco === titulo)) {
+        event.preventDefault();
+        ulimoBotao.focus();
+    } else if (!event.shiftKey && elementoEmFoco === ulimoBotao) {
+        event.preventDefault();
+        primeiroBotao.focus();
+    }
+
+});
 
 const inputBusca = document.querySelector("#input-busca");
 

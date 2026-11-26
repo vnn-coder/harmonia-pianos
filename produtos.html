@@ -65,7 +65,10 @@
             <p>Encontre o instrumento musical que combina com seu estilo e sua paixão pela música.</p>
         </div>
 
-        <p id="mensagem-busca">Nenhum produto encontrado</p>
+        <div id="mensagem-busca">
+             <p>Nenhum produto encontrado</p>
+             <p class="mensagem-busca-dica">Tente buscar por outro instrumento.</p>
+        </div>
 
         <section class="produtos">
 
@@ -110,8 +113,8 @@
 
 
     <div class="carrinho-modal">
-        <div class="carrinho-conteudo">
-            <h2>Seu carrinho</h2>
+        <div class="carrinho-conteudo" role="dialog" aria-modal="true" aria-labelledby="titulo-carrinho">
+            <h2 id="titulo-carrinho" tabindex="-1">Seu carrinho</h2>
 
             <div class="carrinho-itens">
             </div>

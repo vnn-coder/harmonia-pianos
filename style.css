@@ -463,6 +463,11 @@ body {
     background-color: #333;
 }
 
+.btn-comprar:focus-visible {
+    outline: 2px solid #ffc145;
+    outline-offset: 3px;
+}
+
 .produto-card {
     transition: transform 0.3s ease;
 }
@@ -513,8 +518,6 @@ body {
     z-index: 999;
 }
 
-
-
 .carrinho-conteudo {
     background-color: white;
     color: black;
@@ -523,11 +526,9 @@ body {
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
-
     position: absolute;
     top: 0;
     right: 0;
-
     border-radius: 0;
     overflow-y: auto;
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
@@ -535,10 +536,18 @@ body {
     transition: transform 0.3s ease;
 }
 
+.carrinho-conteudo :focus-visible {
+    outline: 2px solid #ffc145;
+    outline-offset: 3px;   
+}
+
+.carrinho-conteudo h2:focus-visible {
+    border-radius: 8px;
+}
+
 .carrinho-modal.show .carrinho-conteudo {
     transform: translateX(0);
 }
-
 
 
 .carrinho-item {
@@ -550,20 +559,16 @@ body {
     width: 100%;
     padding: 10px;
     margin-top: 15px;
-
     background-color: #000;
     color: white;
-
     border: none;
     border-radius: 6px;
-
     cursor: pointer;
 }
 
 .fechar-carrinho:hover {
     background-color: #333;
 }
-
 
 
 .controle-quantidade {
@@ -627,6 +632,7 @@ body {
     padding: 16px;
     background-color: #fff;
     border-left: 3px solid #ffc145;
+    border-right: 3px solid #ffc145;
     border-radius: 8px;
     color: var(--fundo);
     font-weight: 600;
@@ -634,6 +640,13 @@ body {
     text-align: center;
     margin: 30px auto 0;
     font-size: 18px;
+}
+
+.mensagem-busca-dica {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 /* ===== FINALIZAÇÃO DA COMPRA ===== */
