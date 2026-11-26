@@ -118,15 +118,26 @@ document.addEventListener("click", function (event) {
 
         console.log("Botão Gerar PIX clicado!");
 
-        detalhesPix.innerHTML = `        
-        <h3>PIX gerado com sucesso!</h3>
-         <p>Este é um pagamento demonstrativo.</p>
-         <p>Nenhuma cobrança real será realizada.</p>
+        detalhesPix.innerHTML = `  
+        <h3 tabindex="-1">PIX gerado com sucesso!</h3>
+         <p><strong>Este é um pagamento demonstrativo.</strong></p>
+          <p><strong>Nenhuma cobrança será realizada.</strong></p>
+         
          <button type="button" class="btn-confirmar-pix">
            Simular pagamento concluído
          </button>
 
         `;
+
+        const tituloPix = detalhesPix.querySelector("h3");
+        tituloPix.focus();
+    }
+});
+
+document.addEventListener("click", function (event) {
+    if(event.target.classList.contains("btn-confirmar-pix")) {
+        localStorage.removeItem("carrinho");
+        window.location.href = "confirmacao.html";
     }
 });
 
@@ -134,28 +145,35 @@ document.addEventListener("click", function (event) {
 
     if (event.target.classList.contains("btn-finalizar-boleto")) {
 
-        console.log("Clique detectado:", event.target);
 
         const detalhesBoleto = document.querySelector(
             "#detalhes-pagamento .detalhes-boleto"
         );
 
-        console.log("Resultado da busca do boleto:", detalhesBoleto);
-
         if (!detalhesBoleto) return;
 
         detalhesBoleto.innerHTML = `
-            <h3>Boleto gerado com sucesso!</h3>
+            <h3 tabindex="-1">Boleto gerado com sucesso!</h3>
 
-            <p>Este é um boleto demonstrativo.</p>
+            <p><strong>Este é um boleto demonstrativo.</strong></p>
 
-            <p>Nenhuma cobrança será realizada.</p>
+            <p><strong>Nenhuma cobrança será realizada.</strong></p>
 
             <button type="button" class="btn-confirmar-boleto">
                 Simular pagamento concluído
             </button>
         
         `;
+
+        const tituloBoleto = detalhesBoleto.querySelector("h3");
+        tituloBoleto.focus();
+    }
+});
+
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("btn-confirmar-boleto")) {
+        localStorage.removeItem("carrinho");
+        window.location.href = "confirmacao.html"
     }
 });
 
@@ -226,24 +244,29 @@ document.addEventListener("click", function (event) {
 
         detalhesCartao.innerHTML = `
             <div class="pagamento-sucesso">
-        <h3>Pagamento simulado com sucesso!</h3>
-        <p>Os dados do cartão passaram pela validação inicial.</p>
-        <p>Nenhuma cobrança real foi realizada.</p>
+        <h3 tabindex="-1">Pagamento simulado com sucesso!</h3>
+        <p><strong>Os dados do cartão passaram pela validação inicial.</strong></p>
+        <p><strong>Nenhuma cobrança real foi realizada.</strong></p>
         <button type="button" class="btn-confirmar-cartao">
             Confirmar pedido
         </button>
     </div>
  
 `;
+
+const tituloCartao = detalhesCartao.querySelector("h3");
+tituloCartao.focus();
     }
 });
 
 
 document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("btn-confirmar-cartao")) {
+    const botaoConfirmacao = event.target.closest(
+        ".btn-confirmar-pix, .btn-confirmar-cartao, .btn-confirmar-boleto"
+    );
+
+    if (botaoConfirmacao) {
         localStorage.removeItem("carrinho");
-
-
         window.location.href = "confirmacao.html";
     }
 });

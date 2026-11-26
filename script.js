@@ -241,6 +241,8 @@ const produtosCards = document.querySelectorAll(".produto-card");
 
 const mensagemBusca = document.querySelector("#mensagem-busca");
 
+const tituloCatalogo = document.querySelector(".produtos-titulo");
+
 function pesquisarProdutos() {
     const pesquisa = inputBusca.value.toLowerCase().trim();
 
@@ -258,12 +260,16 @@ function pesquisarProdutos() {
 
     });
 
-    if (produtosEncontrados === 0) {
-        mensagemBusca.style.display = "block";
-    } else {
-        mensagemBusca.style.display = "none";
-    }
-}
+   if (produtosEncontrados === 0) {
+    mensagemBusca.style.display = "block";
+    tituloCatalogo.hidden = true;
+
+   } else {
+    mensagemBusca.style.display = "none";
+    tituloCatalogo.hidden = false;
+   }
+ 
+} 
 
 botaoBusca.addEventListener("click", pesquisarProdutos);
 

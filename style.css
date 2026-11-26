@@ -434,6 +434,7 @@ body {
 }
 
 .produto-card h2 {
+    color: var(--fundo);
     margin-top: 15px;
     margin-bottom: 8px;
 }
@@ -442,7 +443,7 @@ body {
     margin-bottom: 10px;
 }
 
-.preço {
+.preco {
     font-size: 22px;
     font-weight: bold;
 }
@@ -479,10 +480,21 @@ body {
 
 .produtos-titulo {
     padding: 30px 20px 0;
+    color: var(--destaque);
 }
 
 .produtos-titulo h1 {
+    color: var(--fundo);
     margin-bottom: 8px;
+    border-left: 3px solid #ffc145;
+    padding-left: 10px;
+}
+
+.produtos-titulo p {
+    color: var(--fundo);
+    font-weight: 600;
+    line-height: 1.5;
+    padding-left: 10px;
 }
 
 /* ===== CARRINHO DE COMPRAS ===== */
@@ -610,9 +622,17 @@ body {
 
 /* ===== MENSAGEM DA BUSCA ===== */
 #mensagem-busca {
+    width: calc(100% - 40px);
+    max-width: 420px;
+    padding: 16px;
+    background-color: #fff;
+    border-left: 3px solid #ffc145;
+    border-radius: 8px;
+    color: var(--fundo);
+    font-weight: 600;
     display: none;
     text-align: center;
-    margin-top: 30px;
+    margin: 30px auto 0;
     font-size: 18px;
 }
 
@@ -620,7 +640,7 @@ body {
 .finalizar-compra {
     width: 100%;
     background-color: #000;
-    color: white;
+    color: var(--texto);
     border: none;
     padding: 12px;
     margin-top: 15px;
@@ -922,10 +942,11 @@ body {
     margin-top: 25px;
 }
 
-.detalhe-pix,
-.detalhe-boleto {
+.detalhes-pix,
+.detalhes-boleto {
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: var(--fundo-secundario);
+    border-left: 3px solid var(--destaque);
     border-radius: 8px;
 }
 
@@ -936,27 +957,35 @@ body {
 }
 
 .detalhes-pix p,
-.detalhe-boleto p {
-    color: #555;
+.detalhes-boleto p {
+    color: var(--texto);
     margin-bottom: 18px;
 }
 
 .btn-finalizar-pix,
 .btn-finalizar-boleto {
-    background-color: #000;
-    color: #FFFFFF;
+    background-color: var(--destaque);
+    color: var(--fundo);
     border: none;
     border-radius: 7px;
     padding: 12px 20px;
+    font-weight: 550;
     font-size: 14px;
     cursor: pointer;
-    transition: 0, 3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-finalizar-pix:hover,
 .btn-finalizar-boleto:hover {
-    background-color: #333;
+    background-color: var(--texto);
     transform: translateY(-2px);
+}
+
+.btn-confirmar-pix:focus-visible,
+.btn-confirmar-boleto:focus-visible,
+.btn-confirmar-cartao:focus-visible {
+    outline: 2px solid var(--texto);
+    outline-offset: 3px;
 }
 
 .btn-finalizar-boleto {
@@ -1100,13 +1129,13 @@ body {
 .pagamento-sucesso h3 {
     font-size: 22px;
     font-weight: 700;
-    color: #111;
+    color: var(--texto);
 }
 
 .pagamento-sucesso p {
     font-size: 15px;
     line-height: 1.6;
-    color: #555;
+    color: var(--texto);
 }
 
 .btn-confirmar-cartao {
@@ -1141,12 +1170,13 @@ body {
 }
 
 .confirmacao-card {
-    background-color: #FFFFFF;
-    color: #111;
+    background-color: var(--fundo-secundario);
+    color: var(--texto);
     width: 100%;
     max-width: 650px;
     padding: 40px;
     border-radius: 12px;
+    border-left: 3px solid var(--destaque);
 }
 
 .confirmacao-card h1 {
@@ -1154,7 +1184,13 @@ body {
     margin-bottom: 20px;
 }
 
+.confirmacao-card h1,
+#resumo-confirmacao > h3 {
+    color: var(--destaque);
+}
+
 .confirmacao-card h2 {
+    color: var(--destaque);
     font-size: 22px;
     margin-top: 30px;
     margin-bottom: 15px;
@@ -1414,5 +1450,20 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
+}
+
+@media (max-width: 480px) {
+    .opcoes-pagamento {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .btn-confirmar-cartao,
+    .btn-confirmar-pix,
+    .btn-confirmar-boleto {
+        font-size: 16px;
+        line-height: 1.35;
+    }
+    
 }
 
